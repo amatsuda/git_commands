@@ -1,0 +1,9 @@
+if [ $# -eq 0 ]; then
+  git commit --amend -v
+else
+  if [ "$1" = "-C" ]; then
+    git commit --amend -C HEAD
+  else
+    git commit -v --amend -m "$*"
+  fi
+fi
